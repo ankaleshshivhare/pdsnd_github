@@ -11,8 +11,9 @@ DAY_DATA = ['monday','tuesday','wednesday','thursday','friday','saturday','sunda
 
 def get_filters():
     """
+    Starts with welcoming the user and motivates him to explore US Bikeshare Data
     Asks user to specify a city, month, and day to analyze.
-
+    
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
