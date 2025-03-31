@@ -7,7 +7,7 @@
 **Bike Share Data**
 
 ### Description
-The project runs a _Python_ program_ which allows users to explore **US Bike Share Data**  data according to their needs to rent bicycles.
+The project runs a _Python_ program which allows users to explore **US Bike Share Data**  data according to their needs to rent bicycles.
 The program when invoked first welcomes the user and motivates him to explore **US Bike Share Data** Asks user to specify a city, month, and day to analyze.
 
     Returns:
@@ -16,8 +16,8 @@ The program when invoked first welcomes the user and motivates him to explore **
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
 
 ### Files used
-i) **Python Program:** _bikeshare.py
-ii) ** Data Files:** _chicago.csv_ , _new_york_city.csv_, _washington.csv_ 
+i) **Python Program:** _bikeshare.py_\n
+ii) **Data Files:** _chicago.csv_ , _new_york_city.csv_, _washington.csv_ 
 
 ### Python Program Description
 
@@ -33,13 +33,13 @@ the program Loads data for the specified city and filters by month and day if ap
         df - Pandas DataFrame containing city data filtered by month and day
 
 The user is able to
-i) See statistics on the most frequent times of travel.
-ii) See statistics on the most popular stations and trip.
-iii) See statistics on the total and average trip duration.
+i) See statistics on the most frequent times of travel.\n
+ii) See statistics on the most popular stations and trip.\n
+iii) See statistics on the total and average trip duration.\n
 
 
 ### Credits
 
-i) Docstrings provided by Udacity to use in Python Program.
-ii) Udacity Bike Share Data Project Details.
+i) Docstrings provided by Udacity to use in Python Program.\n
+ii) Udacity Bike Share Data Project Details.\n
 
