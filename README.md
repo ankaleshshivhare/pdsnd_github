@@ -32,7 +32,10 @@ the program Loads data for the specified city and filters by month and day if ap
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
 
-
+The user is able to
+i) See statistics on the most frequent times of travel.
+ii) See statistics on the most popular stations and trip.
+iii) See statistics on the total and average trip duration.
 
 
 ### Credits
