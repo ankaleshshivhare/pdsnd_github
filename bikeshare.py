@@ -5,7 +5,7 @@ import numpy as np
 DATA_CITY  = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-MONTH_DATA = ['january', 'february', 'march', 'april', 'may', 'june','all']
+DATA_MONTH = ['january', 'february', 'march', 'april', 'may', 'june','all']
 DAY_DATA = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday','all']
 
 
@@ -39,7 +39,7 @@ def get_filters():
     if type_filter == "month":
         while True:
             month = input("Which month - All, January, February, March, April, May, June?").lower()
-            if month in MONTH_DATA:
+            if month in DATA_MONTH:
                 break
             else:
                 print("Invalid input. Please enter a valid month.")
@@ -91,7 +91,7 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = MONTH_DATA
+        months = DATA_MONTH
         month = months.index(month.lower()) + 1
         
         # filter by month to create the new dataframe
