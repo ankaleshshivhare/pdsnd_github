@@ -19,6 +19,22 @@ The program when invoked first welcomes the user and motivates him to explore **
 i) **Python Program:** _bikeshare.py
 ii) ** Data Files:** _chicago.csv_ , _new_york_city.csv_, _washington.csv_ 
 
+### Python Program Description
+
+The program first asks users to enter city, month, and day.
+Once users enter details _(of City, Month and/or Day)  for which they want to explore the data,
+the program Loads data for the specified city and filters by month and day if applicable.
+
+    Args:
+        (str) city - name of the city to analyze
+        (str) month - name of the month to filter by, or "all" to apply no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+    Returns:
+        df - Pandas DataFrame containing city data filtered by month and day
+
+
+
+
 ### Credits
 
 i) Docstrings provided by Udacity to use in Python Program.
