@@ -27,16 +27,16 @@ def get_filters():
         else:
             print("Invalid input. Please enter a valid city name.")
 
-    # TO DO: get user input for month,day or not at all (all, january, february, ... , june)
+    # TO DO: get user input of filter Type (type_filter)for month,day or not at all (all, january, february, ... , june)
     while True:
-        filter_type = input("Would you like to filter the data by month, day, or not at all?").lower()
-        if filter_type in ("month","day","not at all"):
+        type_filter = input("Would you like to filter the data by month, day, or not at all?").lower()
+        if type_filter in ("month","day","not at all"):
             break
         else:
             print("Invalid input. Please enter a valid value as one of month, day, or not at all.")
    
     # TO DO: get user input for month (all, january, february, ... , june) if user chooses month in above filter
-    if filter_type == "month":
+    if type_filter == "month":
         while True:
             month = input("Which month - All, January, February, March, April, May, June?").lower()
             if month in MONTH_DATA:
@@ -44,11 +44,11 @@ def get_filters():
             else:
                 print("Invalid input. Please enter a valid month.")
     else:
-        # Assign "all" to month when filter_type is not "month"
-        month = 'all' 
+        # Assign "all" to month when filter Type (type_filter) is not "month"
+        month = 'all'
                
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    if filter_type == "day":
+    if type_filter == "day":
         while True:
             day = input("Which Day - All, 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'?").lower()
             if day in DAY_DATA:
@@ -57,7 +57,7 @@ def get_filters():
                 print("Invalid input. Please enter a valid Day.")
     else:
         day = 'all' 
-        # Assign "all" to day when filter_type is not "month"
+        # Assign "all" to day when filter Type (type_filter) is not "day"
           
     print('-'*40)
     return city, month, day
@@ -237,3 +237,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
