@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
+DATA_CITY  = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 MONTH_DATA = ['january', 'february', 'march', 'april', 'may', 'june','all']
@@ -22,7 +22,7 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("Would you like to see data for Chicago, New York City, or Washington?").lower()
-        if city in CITY_DATA:
+        if city in DATA_CITY:
             break
         else:
             print("Invalid input. Please enter a valid city name.")
@@ -75,7 +75,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     # Load csv file for the city specified
-    file_name = CITY_DATA.get(city.lower())
+    file_name = DATA_CITY.get(city.lower())
     if file_name is None:
         raise ValueError(f"No Data available for city: {city}")
     
