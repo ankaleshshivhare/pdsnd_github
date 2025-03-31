@@ -2,10 +2,10 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
+DATA_CITY  = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-MONTH_DATA = ['january', 'february', 'march', 'april', 'may', 'june','all']
+DATA_MONTH = ['january', 'february', 'march', 'april', 'may', 'june','all']
 DAY_DATA = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday','all']
 
 
@@ -23,33 +23,33 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("Would you like to see data for Chicago, New York City, or Washington?").lower()
-        if city in CITY_DATA:
+        if city in DATA_CITY:
             break
         else:
             print("Invalid input. Please enter a valid city name.")
 
-    # TO DO: get user input for month,day or not at all (all, january, february, ... , june)
+    # TO DO: get user input of filter Type (type_filter)for month,day or not at all (all, january, february, ... , june)
     while True:
-        filter_type = input("Would you like to filter the data by month, day, or not at all?").lower()
-        if filter_type in ("month","day","not at all"):
+        type_filter = input("Would you like to filter the data by month, day, or not at all?").lower()
+        if type_filter in ("month","day","not at all"):
             break
         else:
             print("Invalid input. Please enter a valid value as one of month, day, or not at all.")
    
     # TO DO: get user input for month (all, january, february, ... , june) if user chooses month in above filter
-    if filter_type == "month":
+    if type_filter == "month":
         while True:
             month = input("Which month - All, January, February, March, April, May, June?").lower()
-            if month in MONTH_DATA:
+            if month in DATA_MONTH:
                 break
             else:
                 print("Invalid input. Please enter a valid month.")
     else:
-        # Assign "all" to month when filter_type is not "month"
-        month = 'all' 
+        # Assign "all" to month when filter Type (type_filter) is not "month"
+        month = 'all'
                
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    if filter_type == "day":
+    if type_filter == "day":
         while True:
             day = input("Which Day - All, 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'?").lower()
             if day in DAY_DATA:
@@ -58,7 +58,7 @@ def get_filters():
                 print("Invalid input. Please enter a valid Day.")
     else:
         day = 'all' 
-        # Assign "all" to day when filter_type is not "month"
+        # Assign "all" to day when filter Type (type_filter) is not "day"
           
     print('-'*40)
     return city, month, day
@@ -77,7 +77,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     # Load csv file for the city specified
-    file_name = CITY_DATA.get(city.lower())
+    file_name = DATA_CITY.get(city.lower())
     if file_name is None:
         raise ValueError(f"No Data available for city: {city}")
     
@@ -93,7 +93,7 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = MONTH_DATA
+        months = DATA_MONTH
         month = months.index(month.lower()) + 1
         
         # filter by month to create the new dataframe
@@ -239,3 +239,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
